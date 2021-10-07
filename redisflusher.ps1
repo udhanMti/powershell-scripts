@@ -1,5 +1,6 @@
 param (
          
+         <#
         [Parameter(Mandatory=$true)]
         [string] 
         $RGName,
@@ -10,10 +11,14 @@ param (
 
         [parameter(Mandatory=$true)]
         [PSCredential] $Creds
+        #>
 
         
 )
 
+
+Write-Output "Hello World"
+<#
 $CacheUrl = $CacheName + ".redis.cache.windows.net"
 $AccessKey = $Creds.GetNetworkCredential().Password
 
@@ -23,3 +28,4 @@ Set-AzRedisCache -ResourceGroupName $RGName -Name $CacheName -EnableNonSslPort $
 Invoke-Command -ScriptBlock { cd "C:\Program Files\Redis" }
 Invoke-Command -ScriptBlock { .\redis-cli.exe -h $CacheUrl -p 6379 -a $AccessKey flushall }
 Set-AzRedisCache -ResourceGroupName $RGName -Name $CacheName -EnableNonSslPort $false
+#>

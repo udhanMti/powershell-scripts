@@ -17,7 +17,7 @@ param (
 )
 
 
-Write-Output "Hello World 2"
+Write-Output "Hello World 10"
 <#
 $CacheUrl = $CacheName + ".redis.cache.windows.net"
 $AccessKey = $Creds.GetNetworkCredential().Password
